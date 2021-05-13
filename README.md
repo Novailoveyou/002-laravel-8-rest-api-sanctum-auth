@@ -6,6 +6,84 @@ This is me following Brad Traversy's [youtube video](https://youtu.be/MT-GJQIY3E
 
 Year 2021
 
+## Things I leanred
+
+### CLI
+
+To install required packages to get started run
+
+```zsh
+sudo apt-get update
+
+sudo apt-get install software-properties-common
+
+sudo add-apt-repository ppa:ondrej/php
+
+sudo apt-get install php
+
+php -v
+
+sudo apt-get install php-mbstring
+
+sudo apt install php-xml
+
+ apt-get install php-sqlite
+
+sudo apt-get install sqlitebrowser
+
+curl -Ss https://getcomposer.org/installer
+
+curl -Ss https://getcomposer.org/installer | php
+
+sudo mv composer.phar /usr/local/bin/composer
+
+chmod +x /usr/local/bin/composer
+
+composer
+
+sudo composer self-update
+
+composer require cviebrock/eloquent-sluggable
+
+composer create-project laravel/laravel .
+```
+
+To update dependencies list
+
+```zsh
+composer update
+```
+
+To run dev server use
+
+```zsh
+php artisan serve
+```
+
+To make a new Modal use
+
+```zsh
+php artisan make:model Product --migration
+```
+
+To make a new table in db use
+
+```zsh
+php artisan migrate
+```
+
+To make a new Controller use
+
+```zsh
+php artisan make:controller ProductController --api
+```
+
+To list all routes use
+
+```zsh
+php artisan route:list
+```
+
 ## Laravel readme
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
