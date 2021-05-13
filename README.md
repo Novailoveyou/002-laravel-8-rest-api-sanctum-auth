@@ -84,6 +84,16 @@ To list all routes use
 php artisan route:list
 ```
 
+Require [Sanctum](https://laravel.com/docs/8.x/sanctum) for auth
+
+```zsh
+composer require laravel/sanctum
+
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+
+php artisan migrate
+```
+
 ## Laravel readme
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
