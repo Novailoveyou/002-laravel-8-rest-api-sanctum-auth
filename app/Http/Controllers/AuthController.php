@@ -33,8 +33,37 @@ class AuthController extends Controller
     return response($resposne, 201);
   }
 
+  public function login(Request $request)
+  {
+    $fields = $request->validate([
+      'email' => 'required|string',
+      'password' => 'required|string'
+    ]);
+
+    // Check email
+    $user = User::where('email', $fields['email'])->first();
+
+    // Check password
+    if (!$user || !Hash::check($fields['password'], $user->password)) {
+      return response([
+        'message' => 'Bad creds'
+      ], 401);
+    }
+
+    $token = $user->createToken('myapptoken')->plainTextToken;
+
+    $resposne = [
+      'user' => $user,
+      'token' => $token
+    ];
+
+    return response($resposne, 201);
+  }
+
   public function logout(Request $request)
   {
+    // the next line shows up as an error with PHP Intelephense but it's not an error, it's actually correct and works as expected
+    // @php-ignore
     auth()->user()->tokens()->delete();
 
     return [
